@@ -4,7 +4,7 @@
 
 
   tasks:
-    - name: Install aptitude using apt module
+    - name: Install aptitude using apt
       apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
 
     - name: Install required system packages
@@ -22,9 +22,13 @@
         state: present
 
     - name: Update apt and install docker-ce
-      apt: update_cache=yes name=docker-ce state=present
-
+      apt: update_cache=yes name=docker-ce state=latest
 
     - name: Install Docker Module for Python
       pip:
-       name: docker
+        name: docker
+    - name: getting docker image from dockerhub
+      command: docker pull navaltechzure3/casestudyappdocker:latest
+
+    - name: running docker container from image
+      command: docker run -p 8080:8080 -td navaltechzure3/casestudyappdocker:latest
