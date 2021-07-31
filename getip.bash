@@ -6,4 +6,4 @@ echo $pub_ib
 echo "ip added in inventory successfully"
 echo "Copying ssh key to new machine"
 sshpass -p Efb2021!2@3# ssh-copy-id  vmadmin@${pubip}
-echo "Copied key " 
+echo "Copied key successfully " 
