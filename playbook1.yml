@@ -1,6 +1,6 @@
 # Description
 # ===========
-# This playbook1 create an Azure VM with public IP, and open all ports
+# This playbook1 create an Azure VM with public IP, and open all portss
 
 - name: Create Azure VM
   hosts: localhost
