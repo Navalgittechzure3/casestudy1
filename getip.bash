@@ -1,5 +1,4 @@
 #/bin/bash
-sleep 1m
 az vm show -d -g ansibleRG -n ansiblevm --query publicIps -o tsv > /home/vmadmin/ip
 pub_ib=`cat /home/vmadmin/ip`
 echo $pub_ib
