@@ -27,8 +27,13 @@
     - name: Install Docker Module for Python
       pip:
         name: docker
+
     - name: getting docker image from dockerhub
       command: docker pull navaltechzure3/casestudyappdocker:latest
+      
+    - name : stopping all docker containers if already running
+      shell: sudo docker stop $(sudo docker ps -a -q)
 
     - name: running docker container from image
-      command: docker run -p 8080:8080 -td navaltechzure3/casestudyappdocker:latest
+      command: docker run -p 8080:8080 -dt  navaltechzure3/casestudyappdocker:latest
+
