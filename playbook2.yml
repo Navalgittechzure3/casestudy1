@@ -32,7 +32,8 @@
       command: docker pull navaltechzure3/casestudyappdocker:latest
       
     - name : stopping all docker containers if already running
-      shell: docker stop $(docker ps -a -q)
+      shell: docker container ls -aq | xargs --no-run-if-empty  docker container rm -f
+
 
     - name: running docker container from image
       command: docker run -p 8080:8080 -dt  navaltechzure3/casestudyappdocker:latest
