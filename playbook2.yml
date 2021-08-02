@@ -32,7 +32,7 @@
       command: docker pull navaltechzure3/casestudyappdocker:latest
       
     - name : stopping all docker containers if already running
-      shell: sudo docker stop $(sudo docker ps -a -q)
+      shell: docker stop $(docker ps -a -q)
 
     - name: running docker container from image
       command: docker run -p 8080:8080 -dt  navaltechzure3/casestudyappdocker:latest
